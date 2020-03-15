@@ -1,0 +1,38 @@
+
+plugins {
+    id 'java'
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.10.1'
+}
+
+repositories {
+    jcenter()
+}
+
+gradlePlugin {
+    plugins {
+        myPlugins {
+            id = 'de.signal7.rancher-gradle-plugin'
+            implementationClass = 'RancherPlugin'
+        }
+    }
+}
+
+dependencies {
+    compileOnly gradleApi()
+    compile("io.github.http-builder-ng:http-builder-ng-core:1.0.3")
+}
+
+pluginBundle {
+    website = 'https://github.com/aremann/rancher-gradle-plugin'
+    vcsUrl = 'https://github.com/aremann/rancher-gradle-plugin'
+    description = 'Simple Rancher gradle plugin to redeploy a workload'
+    tags = ['rancher']
+
+    plugins {
+        rancherPlugin {
+            // id is captured from java-gradle-plugin configuration
+            displayName = 'Rancher Gradle Plugin'
+        }
+    }
+}
