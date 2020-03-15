@@ -1,9 +1,13 @@
 
 plugins {
     id 'java'
+    id 'groovy'
     id 'java-gradle-plugin'
     id 'com.gradle.plugin-publish' version '0.10.1'
 }
+
+version = "0.1"
+group = "de.signal7.rancher-gradle-plugin"
 
 repositories {
     jcenter()
@@ -11,9 +15,9 @@ repositories {
 
 gradlePlugin {
     plugins {
-        myPlugins {
-            id = 'de.signal7.rancher-gradle-plugin'
-            implementationClass = 'RancherPlugin'
+        rancherPlugin {
+            id = project.group
+            implementationClass = 'de.signal7.RancherPlugin'
         }
     }
 }
@@ -31,7 +35,6 @@ pluginBundle {
 
     plugins {
         rancherPlugin {
-            // id is captured from java-gradle-plugin configuration
             displayName = 'Rancher Gradle Plugin'
         }
     }

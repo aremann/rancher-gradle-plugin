@@ -1,3 +1,5 @@
+package de.signal7
+
 import groovyx.net.http.FromServer
 import groovyx.net.http.JavaHttpBuilder
 import org.gradle.api.GradleException
