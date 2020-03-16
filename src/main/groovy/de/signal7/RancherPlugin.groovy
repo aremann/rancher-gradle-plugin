@@ -71,8 +71,8 @@ class RancherPlugin implements Plugin<Project> {
         if (extension.rancherUrl == null) {
             throw new GradleException("rancherUrl is not set");
         }
-        if (extension.apiToken == null) {
-            throw new GradleException("apiToken is not set");
+        if (extension.apiBearerToken == null) {
+            throw new GradleException("apiBearerToken is not set");
         }
         if (extension.projectId == null) {
             throw new GradleException("projectId is not set");
